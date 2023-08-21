@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="/css/main.css" />
 <!-- For any Bootstrap that uses JS -->
 <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>    
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <meta charset="UTF-8">
 <title>Login n Reg</title>
 </head>
@@ -19,7 +19,7 @@
 		<div class="row">
 			<div class="col">
 				<h1>Register</h1>
-				<form:form action="/user/register" method="post"
+				<form:form action="/users/register" method="post"
 					modelAttribute="newUser">
 					<div class="form-group">
 						<label>User Name</label>
@@ -46,7 +46,7 @@
 			</div>
 			<div class="col">
 				<h1>login</h1>
-				<form:form action="/user/login" method="post"
+				<form:form action="/users/login" method="post"
 					modelAttribute="loginUser">
 					<div class="form-group">
 						<label>Email</label>
