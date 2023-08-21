@@ -26,13 +26,13 @@
 			<div class="row justify-content-center align-items-center g-2 my-1">
 				<div class="col	">
 					<h1>
-						Hello, <span class="text-primary">
+						Namaste, <span class="text-primary">
 							<c:out value="${loginUser.userName}" />
 						</span> !
 					</h1>
 				</div>
 				<div class="col-2">
-					<a class="btn btn-danger" href="/">Logout</a>
+					<a class="btn btn-danger" href="/logout">Logout</a>
 				</div>
 
 
@@ -52,7 +52,7 @@
 						<tbody>
 							<c:forEach items="${allClasses}" var="yoga">
 								<tr>
-									<td><a href="/classes/${yoga.id}">${yoga.yogaName}</a></td>
+									<td><a href="yogas/classes/${yoga.id}">${yoga.yogaName}</a></td>
 
 									<td>${yoga.instructor.userName}</td>
 									<td>${yoga.week}</td>

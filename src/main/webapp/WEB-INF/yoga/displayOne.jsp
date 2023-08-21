@@ -15,8 +15,8 @@
 </head>
 
 <body>
-	<div class="container-sm">
-		<h1>Yoga Details</h1>
+	<div class="container">
+		<h1 class="my-2">${yoga.yogaName} with <span class="text-warning"> ${yoga.instructor.userName}</span></h1>
 		<table class="text-secondary table-striped table">
 			<tr>
 				<td class="h5">Day</td>
@@ -30,17 +30,16 @@
 				<td class="h5">Time:</td>
 				<td>${yoga.time}</td>
 			</tr>
-			<tr>
-				<td class="h5">Description:</td>
-				<td>${yoga.description}</td>
-			</tr>
-
 		</table>
+
+				<p class="text-emphasis">${yoga.description}</p>
+
+
 	</div>
 	<div class="container-sm">
 		<div class="row">
 			<div class="col">
-				<a href="/edit/${yoga.id}" class="btn btn-warning my-2">Edit</a>
+				<a href="/yogas/edit/${yoga.id}" class="btn btn-warning my-2">Edit</a>
 			</div>
 			<div class="col">
 				<form action="/yogas/${yoga.id}" method="POST">

@@ -66,6 +66,6 @@ public class YogaController {
 	public String displayOne(@PathVariable("id") Long id, Model model) {
 		Yoga yoga = yogaService.getOne(id);
 		model.addAttribute("yoga", yoga);
-		return "displayOne.jsp";
+		return "yoga/displayOne.jsp";
 	}
 }

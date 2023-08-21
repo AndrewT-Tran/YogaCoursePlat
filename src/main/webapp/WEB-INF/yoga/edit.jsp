@@ -41,15 +41,20 @@
 			<div class="form-group">
 				<label>Time</label>
 				<form:input type="number" path="time" class="form-control" />
-				<form:errors path="time" class="text-danger" />
+				<form:errors path="time" class="text-danger" />Ï
 			</div>
 			<div class="form-group">
 				<label>Description</label>
 				<form:input path="description" class="form-control" />
 				<form:errors path="description" class="text-danger" />
 			</div>
-			<input type="submit" value="Create" class=" my-2 btn btn-primary" />
+			<input type="submit" value="Submit" class=" my-2 btn btn-primary" />
+			<a class="btn btn-warning" href="/">Cancel</a>
 			</form:form>
-			<a class="btn btn-danger" href="/">Cancel</a>
+				<form action="/yogas/${yoga.id}" method="POST" class="d-inline">
+												<input type="hidden" value="delete" name="_method" /> <input
+													type="submit" value="Delete" class="btn btn-danger" />
+											</form>
+											</div>
 </body>
 </html>
