@@ -45,11 +45,11 @@ public class UserService {
         }
         User existingUser = this.getUser(loginUser.getEmail());
         if (existingUser == null) {
-            // result.rejectValue("email", "Unknown Email");
+             result.rejectValue("email", "Unknown Email");
             return null;
         }
         if (!BCrypt.checkpw(loginUser.getPassword(), existingUser.getPassword())) {
-            result.rejectValue("email", "invalid credentials");
+            result.rejectValue("email", "match","invalid credentials");
         }
         return existingUser;
     }
