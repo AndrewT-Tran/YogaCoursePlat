@@ -52,7 +52,7 @@
 						<tbody>
 							<c:forEach items="${allClasses}" var="yoga">
 								<tr>
-									<td><a href="/classes/${yoga.id}">${yoga.yogaName}</a></td>
+									<td><a href="/yogas/${yoga.id}">${yoga.yogaName}</a></td>
 
 									<td>${yoga.instructor.userName}</td>
 									<td>${yoga.week}</td>
