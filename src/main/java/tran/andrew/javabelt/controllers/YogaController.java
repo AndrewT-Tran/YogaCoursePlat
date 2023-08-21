@@ -64,7 +64,8 @@ public class YogaController {
 
 	@GetMapping("/classes/{id}")
 	public String displayOne(@PathVariable("id") Long id, Model model) {
-		model.addAttribute("yoga", yogaService.getOne(id));
-		return "yoga/displayOne.jsp";
+		Yoga yoga = yogaService.getOne(id);
+		model.addAttribute("yoga", yoga);
+		return "displayOne.jsp";
 	}
 }

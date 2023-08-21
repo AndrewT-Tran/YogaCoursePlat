@@ -21,7 +21,7 @@ public class YogaService {
 		return yogaRepo.findAll();
 	}
 
-	public Yoga getOne(Long id) {
+	public Yoga displayOne(Long id) {
 		Optional<Yoga> yoga = yogaRepo.findById(id);
 		return yoga.isPresent() ? yoga.get() : null;
 	}
@@ -36,4 +36,9 @@ public class YogaService {
 	public void delete(Long id) {
 		yogaRepo.deleteById(id);
 	}
+
+    public Yoga getOne(Long id) {
+		Optional<Yoga> yoga = yogaRepo.findById(id);
+		return yoga.isPresent() ? yoga.get() :null;
+    }
 }
