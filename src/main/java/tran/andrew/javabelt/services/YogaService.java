@@ -1,6 +1,7 @@
 package tran.andrew.javabelt.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
@@ -12,32 +13,28 @@ import tran.andrew.javabelt.repositories.YogaClassRepository;
 public class YogaService {
 	private YogaClassRepository yogaRepo;
 
-	public YogaService(YogaClassRepository yogarepo) {
-		this.setYogaRepo(yogarepo);
+	public YogaService(YogaClassRepository yogaRepo) {
+		this.yogaRepo = yogaRepo;
 	}
 
 	public List<Yoga> getAll() {
 		return yogaRepo.findAll();
 	}
 
-	public YogaClassRepository getYogaRepo() {
-		return yogaRepo;
+	public Yoga getOne(Long id) {
+		Optional<Yoga> yoga = yogaRepo.findById(id);
+		return yoga.isPresent() ? yoga.get() : null;
 	}
 
-	public void setYogaRepo(YogaClassRepository yogaRepo) {
-		this.yogaRepo = yogaRepo;
+	public Yoga create(@Valid Yoga yoga) {
+		return yogaRepo.save(yoga);
 	}
 
-	public void create(@Valid Yoga yoga) {
-	}
-
-	public void update(@Valid Yoga yoga) {
-	}
-
-	public Object getOne(Long id) {
-		return null;
+	public Yoga update(@Valid Yoga yoga) {
+		return yogaRepo.save(yoga);
 	}
 
 	public void delete(Long id) {
+		yogaRepo.deleteById(id);
 	}
 }

@@ -41,25 +41,26 @@
 				class="table table-striped table-hover border-primary justify-content-center">
 				<thead>
 					<tr>
-						<th scope="col">Model</th>
-						<th scope="col">Year</th>
-						<th scope="col">Make</th>
-						<th scope="col">Seller</th>
-						<th scope="col">Action</th>
+						<th scope="col">Class Name</th>
+						<th scope="col">Instructor</th>
+						<th scope="col">Weekday</th>
+						<th scope="col">Price</th>
+						<th scope="col">Time</th>
 					</tr>
 				</thead>
 				<tbody>
-					<c:forEach items="${allCars}" var="car">
+					<c:forEach items="${allYoga}" var="yoga">
 						<tr>
-							<td><a href="cars/${car.id}">${car.model}</a></td>
-							<td>${car.year}</td>
-							<td>${car.make}</td>
-							<td>${car.seller.userName}</td>
+							<td><a href="yoga/${yoga.id}">${yoga.model}</a></td>
+							<td>${yoga.instructor.userName}</td>
+							<td>${yoga.weekday}</td>
+							<td>${yoga.price}</td>
+							<td>${yoga.time}</td>
 							<td><c:if
-									test="${car.seller.userName == loginUser.userName}">
-									<a href="/cars/edit/${car.id}" class="btn btn-warning mr-2"><i
+									test="${yoga.seller.userName == loginUser.userName}">
+									<a href="/yoga/edit/${yoga.id}" class="btn btn-warning mr-2"><i
 										class="bi bi-database-fill-dash"></i> Edit</a>
-									<form action="/cars/${car.id}" method="POST" class="d-inline">
+									<form action="/yoga/${yoga.id}" method="POST" class="d-inline">
 										<input type="hidden" value="delete" name="_method" /> <input
 											type="submit" value="Delete" class="btn btn-danger" />
 									</form>
@@ -68,7 +69,7 @@
 					</c:forEach>
 				</tbody>
 			</table>
-			<a class="btn btn-success" href="/cars/create"> <i
+			<a class="btn btn-success" href="yogas/create"> <i
 				class="bi bi-database-fill-add"></i> Create
 			</a>
 		</div>

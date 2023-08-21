@@ -31,7 +31,7 @@ public class YogaController {
 	}
 
 	@PostMapping("/process/create")
-	public String processCreateYoga(@Valid @ModelAttribute("yoga") Yoga yoga, BindingResult result,
+	public String CreateYoga(@Valid @ModelAttribute("yoga") Yoga yoga, BindingResult result,
 			HttpSession session) {
 		if (result.hasErrors()) {
 			return "/yoga/create.jsp";

@@ -28,22 +28,23 @@ public class UserController {
 	}
 
 	@PostMapping("/register")
-	public String registerUser(@Valid @ModelAttribute("newUser") User user, BindingResult result, Model model, HttpSession session) {
+	public String registerUser(@Valid @ModelAttribute("newUser") User user, BindingResult result, Model model,
+			HttpSession session) {
 		// reject value if email is taken
-		if(userService.getUser(user.getEmail()) != null) {
-			result.rejectValue("email","Unique","Email already in use!");
+		if (userService.getUser(user.getEmail()) != null) {
+			result.rejectValue("email", "Unique", "Email already in use!");
 		}
-		//reject if passwords dont match
-		if(!user.getPassword().equals(user.getConfirm())) {
-			result.rejectValue("password","Match", "Confirm password must match");
+		// reject if passwords dont match
+		if (!user.getPassword().equals(user.getConfirm())) {
+			result.rejectValue("password", "Match", "Confirm password must match");
 		}
-		if(result.hasErrors()) {
+		if (result.hasErrors()) {
 			model.addAttribute("loginUser", new LoginUser());
 			return "user/loginReg.jsp";
 		}
 		User newUser = userService.registerUser(user);
-		if(newUser == null) {
-			result.rejectValue("email","Unique","Email already in use!");
+		if (newUser == null) {
+			result.rejectValue("email", "Unique", "Email already in use!");
 			model.addAttribute("loginUser", new LoginUser());
 			return "user/loginReg.jsp";
 		}
@@ -52,9 +53,10 @@ public class UserController {
 	}
 
 	@PostMapping("/login")
-	public String loginUser(@Valid @ModelAttribute("loginUser") LoginUser loginUser, BindingResult result, Model model,HttpSession session) {
+	public String loginUser(@Valid @ModelAttribute("loginUser") LoginUser loginUser, BindingResult result, Model model,
+			HttpSession session) {
 		User loggingUser = userService.login(loginUser, result);
-		if(result.hasErrors()) {
+		if (result.hasErrors()) {
 			model.addAttribute("newUser", new User());
 			return "user/loginReg.jsp";
 		}

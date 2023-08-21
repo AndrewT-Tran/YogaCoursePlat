@@ -10,32 +10,32 @@
         <script src="/webjars/bootstrap/4.5.2/js/bootstrap.min.js"></script>
         <script src="/webjars/jquery/3.5.1/jquery.min.js"></script>
         <meta charset="ISO-8859-1">
-        <title>Create</title>
+        <title>Create a Course</title>
     </head>
 
     <body>
-        <h1>Add Car</h1>
-        <form:form action="/cars/process/create" method="post" modelAttribute="car">
-            <form:input type="hidden" name="_method" path="seller" value="${user_id}" />
-           <div class="form-group">
-				<label>Price</label>
-				<form:input type="number" path="price" class="form-control" />
-				<form:errors path="price" class="text-danger" />
+        <h1>Create a Course</h1>
+        <form:form action="/yogas/process/create" method="post" modelAttribute="yoga">
+            <form:input type="hidden" name="_method" path="instructor" value="${user_id}" />
+			<div class="form-group">
+				<label>Name</label>
+				<form:input path="yogaName" class="form-control" />
+				<form:errors path="yogaName" class="text-danger" />
 			</div>
 			<div class="form-group">
-				<label>Model</label>
-				<form:input path="model" class="form-control" />
-				<form:errors path="model" class="text-danger" />
+				<label>Day of Week</label>
+				<form:input path="week" class="form-control" />
+				<form:errors path="week" class="text-danger" />
 			</div>
 			<div class="form-group">
-				<label>Make</label>
-				<form:input path="make" class="form-control" />
-				<form:errors path="make" class="text-danger" />
-			</div>
+				 <label>Drop-in Price</label>
+				 <form:input type="number" path="price" class="form-control" />
+				 <form:errors path="price" class="text-danger" />
+			 </div>
 			<div class="form-group">
-				<label>Year</label>
-				<form:input type="number" path="year" class="form-control" />
-				<form:errors path="year" class="text-danger" />
+				<label>Time</label>
+				<form:input type="number" path="time" class="form-control" />
+				<form:errors path="time" class="text-danger" />
 			</div>
 			<div class="form-group">
 				<label>Description</label>
