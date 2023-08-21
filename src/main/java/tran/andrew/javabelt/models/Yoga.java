@@ -1,6 +1,9 @@
 package tran.andrew.javabelt.models;
 
+import java.time.LocalTime;
 import java.util.Date;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -13,6 +16,7 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "yoga")
@@ -29,8 +33,11 @@ public class Yoga {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
     private User instructor;
-    @Min(value = 0, message = "Please select time")
-    private int time;
+
+    @NotNull
+    @DateTimeFormat(pattern = "HH:mm")
+    private LocalTime startTime;
+
     @Min(value = 0, message = "Price must be greater than 0")
     private double price;
 
@@ -38,6 +45,14 @@ public class Yoga {
     private Date createdAt;
 
     private Date updatedAt;
+
+    public LocalTime getStartTime() {
+        return startTime;
+    }
+
+    public void setStartTime(LocalTime startTime) {
+        this.startTime = startTime;
+    }
 
     public Long getId() {
         return id;
@@ -79,13 +94,7 @@ public class Yoga {
         this.instructor = instructor;
     }
 
-    public int getTime() {
-        return time;
-    }
 
-    public void setTime(int time) {
-        this.time = time;
-    }
 
     public double getPrice() {
         return price;

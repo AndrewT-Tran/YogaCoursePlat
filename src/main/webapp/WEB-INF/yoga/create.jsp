@@ -32,11 +32,11 @@
 				 <form:input type="number" path="price" class="form-control" />
 				 <form:errors path="price" class="text-danger" />
 			 </div>
-			<div class="form-group">
-				<label>Time</label>
-				<form:input type="number" path="time" class="form-control" />
-				<form:errors path="time" class="text-danger" />
-			</div>
+		<div class="form-group">
+			<label for="startTime">Start Time:</label>
+			<form:input path="startTime" type="time" class="form-control" />
+			<form:errors path="startTime" cssClass="text-danger" />
+		</div>
 			<div class="form-group">
 				<label>Description</label>
 				<form:input path="description" class="form-control" />
