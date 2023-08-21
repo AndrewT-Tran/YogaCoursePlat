@@ -17,8 +17,6 @@ public class LoginUser {
     public LoginUser() {
     }
 
-
-
     public String getEmail() {
         return email;
     }
