@@ -39,9 +39,6 @@ public class Yoga {
 
     private Date updatedAt;
 
-    public Yoga() {
-    }
-
     public Long getId() {
         return id;
     }
@@ -112,6 +109,9 @@ public class Yoga {
 
     public void setUpdatedAt(Date updatedAt) {
         this.updatedAt = updatedAt;
+    }
+
+    public Yoga() {
     }
 
 }

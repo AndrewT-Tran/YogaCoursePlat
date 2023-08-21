@@ -33,7 +33,6 @@ public class YogaService {
 	public Yoga update(@Valid Yoga yoga) {
 		return yogaRepo.save(yoga);
 	}
-
 	public void delete(Long id) {
 		yogaRepo.deleteById(id);
 	}

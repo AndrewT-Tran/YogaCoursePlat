@@ -40,7 +40,11 @@ public class User {
     private String confirm;
 
     @OneToMany(mappedBy = "instructor", fetch = FetchType.LAZY)
-    private List<Yoga> yogaClasses;
+    private List<Yoga> yogas;
+
+    public User(List<Yoga> yogas) {
+        this.yogas = yogas;
+    }
 
     public User() {
     }
@@ -82,15 +86,21 @@ public class User {
     }
 
     public List<Yoga> getYoga() {
-        return  yogaClasses;
+        return yogas;
     }
 
-    public void setYogaClassName(List<Yoga> yogaClasses) {
-        this.yogaClasses = yogaClasses;
-    }
+
 
     public void setConfirm(String confirm) {
         this.confirm = confirm;
+    }
+
+    public List<Yoga> getYogas() {
+        return yogas;
+    }
+
+    public void setYogas(List<Yoga> yogas) {
+        this.yogas = yogas;
     }
 
 }

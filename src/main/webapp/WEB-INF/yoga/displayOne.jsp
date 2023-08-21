@@ -16,37 +16,34 @@
 
 <body>
 	<div class="container-sm">
-		<h1>Car Details</h1>
+		<h1>Yoga Details</h1>
 		<table class="text-secondary table-striped table">
 			<tr>
-				<td class="h5">Make:</td>
-				<td>${car.make}</td>
+				<td class="h5">Day</td>
+				<td>${yoga.week}</td>
 			</tr>
 			<tr>
-				<td class="h5">Model:</td>
-				<td>${car.model}</td>
+				<td class="h5">Cost:</td>
+				<td>${yoga.price}</td>
 			</tr>
 			<tr>
-				<td class="h5">Year:</td>
-				<td>${car.year}</td>
+				<td class="h5">Time:</td>
+				<td>${yoga.time}</td>
 			</tr>
 			<tr>
 				<td class="h5">Description:</td>
-				<td>${car.description}</td>
+				<td>${yoga.description}</td>
 			</tr>
-			<tr>
-				<td class="h5">Price:</td>
-				<td>${car.price}</td>
-			</tr>
+
 		</table>
 	</div>
 	<div class="container-sm">
 		<div class="row">
 			<div class="col">
-				<a href="/cars/edit/${car.id}" class="btn btn-warning my-2">Edit</a>
+				<a href="/edit/${yoga.id}" class="btn btn-warning my-2">Edit</a>
 			</div>
 			<div class="col">
-				<form action="/cars/${car.id}" method="POST">
+				<form action="/yogas/${yoga.id}" method="POST">
 					<input type="hidden" value="delete" name="_method" /> <input
 						type="submit" value="Delete" class="btn btn-danger" />
 				</form>
