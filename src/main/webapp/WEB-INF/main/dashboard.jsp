@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
@@ -12,7 +12,8 @@
 		<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
 		<!-- YOUR own local CSS -->
 		<link rel="stylesheet" href="/css/main.css" />
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+		<link rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 		<!-- For any Bootstrap that uses JS -->
 		<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 		<title>
@@ -20,12 +21,12 @@
 		</title>
 	</head>
 
-	<body class="bg-light">
+	<body class="bg-dark p-2 text-dark bg-opacity-10">
 
 		<div class="container">
 			<div class="row justify-content-center align-items-center g-2 my-1">
 				<div class="col	">
-					<h1>
+					<h1 class="text-secondary">
 						Namaste, <span class="text-primary">
 							<c:out value="${loginUser.userName}" />
 						</span> !
@@ -35,10 +36,9 @@
 					<a class="btn btn-danger" href="/logout">Logout</a>
 				</div>
 
-
-
 				<div class="table-responsive">
-					<table class="table table-striped table-hover border-primary justify-content-center">
+					<table
+						class="table table-striped table-hover border-primary justify-content-center">
 						<thead>
 							<tr>
 								<th scope="col">Class Name</th>
@@ -50,7 +50,7 @@
 							</tr>
 						</thead>
 						<tbody>
-							<c:forEach items="${allClasses}" var="yoga">
+							<c:foreach items="${allClasses}" var="yoga">
 								<tr>
 									<td><a href="yogas/classes/${yoga.id}">${yoga.yogaName}</a></td>
 
@@ -65,15 +65,15 @@
 											<form action="/yogas/${yoga.id}" method="POST" class="d-inline">
 												<input type="hidden" value="delete" name="_method" /> <input
 													type="submit" value="Delete" class="btn btn-danger" />
-											</form>
+											</form>F
 										</c:if>
 									</td>
 								</tr>
-							</c:forEach>
+							</c:foreach>
 						</tbody>
 					</table>
-					<a class="btn btn-success" href="yogas/create"> <i class="bi bi-database-fill-add"></i> Create
-					</a>
+					<a class="btn btn-success" href="yogas/create"> 
+						<i class="bi bi-database-fill-add"></i> Create</a>
 				</div>
 			</div>
 		</div>

@@ -14,9 +14,9 @@
 <meta charset="UTF-8">
 <title>Login n Reg</title>
 </head>
-<body>
+<body class="bg-primary p-2 text-dark bg-opacity-10">
 	<div class="container">
-		<h1 class="text-info my-2">Course Platform - Instructors</h1>
+		<h1 class="text-warning my-2">Course Platform - Instructors</h1>
 		<div class="row">
 			<div class="col">
 				<h1 class="text-primary">Register</h1>
@@ -47,7 +47,7 @@
 				</form:form>
 			</div>
 			<div class="col">
-				<h1 class="text-success">login</h1>
+				<h1 class="text-success">Login</h1>
 				<form:form action="/users/login" method="post"
 					modelAttribute="loginUser">
 					<div class="form-group">
