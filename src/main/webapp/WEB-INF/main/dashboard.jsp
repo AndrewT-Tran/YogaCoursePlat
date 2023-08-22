@@ -65,15 +65,16 @@ pageEncoding="UTF-8"%>
 											<form action="/yogas/${yoga.id}" method="POST" class="d-inline">
 												<input type="hidden" value="delete" name="_method" /> <input
 													type="submit" value="Delete" class="btn btn-danger" />
-											</form>F
+											</form>
 										</c:if>
 									</td>
 								</tr>
 							</c:foreach>
 						</tbody>
 					</table>
-					<a class="btn btn-success" href="yogas/create"> 
-						<i class="bi bi-database-fill-add"></i> Create</a>
+					<a class="btn btn-success" href="yogas/create"> <i
+							class="bi bi-database-fill-add"></i> Create
+					</a>
 				</div>
 			</div>
 		</div>
