@@ -2,8 +2,8 @@ Yoga Course Platform
 ====================
 
 Create a course platform where the users are instructors who can create, read, update and destroy courses.
+![1634165479__yoga exam](https://github.com/AndrewT-Tran/JavaBelt/assets/112746783/b2475e5f-64bd-48e7-971e-a183ef255659)
 
-![](https://assets.codingdojo.com/boomyeah2015/codingdojo/curriculum/content/chapter/1634165479__yoga exam.png)
 
 Proficiency Requirements (for a Red Belt):
 ------------------------------------------
