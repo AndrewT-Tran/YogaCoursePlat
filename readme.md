@@ -4,7 +4,6 @@
 
 This project aims to create a comprehensive course platform tailored for yoga enthusiasts. In this platform, users take on the role of instructors who can create, read, update, and delete courses.
 
-![Yoga Course](https://github.com/AndrewT-Tran/JavaBelt/assets/112746783/b2475e5f-64bd-48e7-971e-a183ef255659)
 
 ## Features Implemented
 
